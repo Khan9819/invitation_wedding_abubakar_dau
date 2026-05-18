@@ -1,0 +1,1164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Islamic Wedding Invitation</title>
+
+  <style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  background:#f7f3eb;
+  overflow-x:hidden;
+  color:#333;
+}
+
+/* ========= LUXURY SPLASH SCREEN ========= */
+
+.splash{
+  position:fixed;
+  inset:0;
+  background:
+  linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),
+  url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=1600&auto=format&fit=crop')
+  center/cover no-repeat;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
+  overflow:hidden;
+}
+
+/* ======================
+   3D SPLASH
+====================== */
+
+.splash{
+    position:fixed;
+    inset:0;
+
+    background:
+    linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.75)),
+    url('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1600&auto=format&fit=crop')
+    center/cover no-repeat;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    perspective:2000px;
+    overflow:hidden;
+    z-index:99999;
+}
+
+/* ENVELOPE */
+
+.envelope{
+    position:relative;
+    width:380px;
+    height:250px;
+
+    transform-style:preserve-3d;
+    cursor:pointer;
+}
+
+/* BODY */
+
+.envelope-body{
+    position:absolute;
+    inset:0;
+
+    border-radius:20px;
+
+    background:
+    linear-gradient(135deg,#b8860b,#f5d76e);
+
+    box-shadow:
+    0 20px 50px rgba(0,0,0,.5);
+}
+
+/* TOP */
+
+.envelope-top{
+    position:absolute;
+    inset:0;
+
+    background:
+    linear-gradient(135deg,#8b6508,#d4af37);
+
+    clip-path:polygon(0 0,100% 0,50% 60%);
+
+    transform-origin:top;
+
+    transition:1.4s cubic-bezier(.68,-0.55,.27,1.55);
+
+    border-radius:20px;
+
+    z-index:5;
+
+    backface-visibility:hidden;
+}
+
+/* LETTER */
+
+.letter{
+    position:absolute;
+
+    width:88%;
+    height:88%;
+
+    left:6%;
+    top:6%;
+
+    background:white;
+
+    border-radius:18px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    transition:1.5s cubic-bezier(.68,-0.55,.27,1.55);
+
+    z-index:2;
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,.2);
+}
+
+.letter h2{
+    font-size:50px;
+    color:#b8860b;
+    font-family:'Great Vibes',cursive;
+}
+
+.letter p{
+    margin-top:10px;
+    color:#555;
+}
+
+/* LIGHT */
+
+.flash-light{
+    position:absolute;
+
+    top:50%;
+    left:50%;
+
+    width:20px;
+    height:20px;
+
+    border-radius:50%;
+
+    background:#fff8dc;
+
+    transform:translate(-50%,-50%);
+
+    opacity:0;
+
+    filter:blur(10px);
+
+    z-index:20;
+}
+
+/* OPEN EFFECT */
+
+.open .envelope-top{
+    transform:
+    rotateX(180deg);
+}
+
+.open .letter{
+    transform:
+    translateY(-180px)
+    scale(1.05);
+}
+
+/* SPLASH FADE */
+
+.hideSplash{
+    animation:fadeOut 1.5s forwards;
+}
+
+@keyframes fadeOut{
+
+    to{
+        opacity:0;
+        visibility:hidden;
+    }
+
+}
+
+/* Mobile */
+@media(max-width:480px){
+
+  .envelope{
+    width:300px;
+    height:210px;
+  }
+
+  .letter h2{
+    font-size:40px;
+  }
+
+}
+
+/* MAIN */
+.main{
+  display:none;
+  animation:fadeIn 1.5s ease;
+}
+
+@keyframes fadeIn{
+  from{
+    opacity:0;
+    transform:translateY(20px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+.hero{
+  min-height:100vh;
+  background:
+  linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)),
+  url('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200&auto=format&fit=crop') center/cover;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:30px;
+  text-align:center;
+  color:white;
+}
+
+.hero-content{
+  max-width:850px;
+}
+
+.hero h1{
+font-family: 'Great Vibes', cursive;
+  font-size: 90px; /* Ukubwa uliochangamka ili mcharazo usomeke vizuri */
+  font-weight: 400;
+  color: #f6d365; /* Rangi ya dhahabu */
+  margin-bottom: 10px;
+}
+.hero h1 span {
+    font-family: 'Great Vibes', cursive !important;
+    font-size: 90px; /* Inalazimisha ukubwa wa mcharazo kwenye maneno yenyewe */
+    color: #f6d365;
+    text-shadow: 2px 3px 6px rgba(0, 0, 0, 0.6);
+}
+.hero h2{
+  font-size:30px;
+  font-weight:500;
+  margin-bottom:15px;
+}
+
+.hero p{
+  font-size:18px;
+  line-height:1.8;
+}
+
+.couple{
+  display:flex;
+  justify-content:center;
+  margin-top:40px;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.couple img{
+  width:260px;
+  height:320px;
+  object-fit:cover;
+  border-radius:20px;
+  border:5px solid rgba(255,255,255,0.4);
+  box-shadow:0 10px 30px rgba(0,0,0,0.3);
+}
+/* TIMER - IMEREKEBISHWA */
+.timer-section{
+  padding:80px 20px;
+  background:#fff;
+  text-align:center;
+}
+
+.section-title{
+  font-family:'Great Vibes',cursive;
+  font-size:60px;
+  color:#b48b1f;
+  margin-bottom:50px;
+}
+
+.timer-container{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+/* KADI ZA MUDA ZINAZOJINYANYUA NA KUNG'AA */
+.time-card{
+  width:170px;
+  background:white;
+  border-radius:20px;
+  padding:35px 20px;
+  box-shadow:0 10px 35px rgba(0,0,0,0.06);
+  transition:all 0.5s cubic-bezier(0.4, 0, 0.2, 1); /* Transition laini zaidi */
+  border:2px solid #f3e4b2;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Mgeni akiweka kidole/mouse juu ya kadi */
+.time-card:hover{
+  transform:translateY(-12px); /* Inajinyanyua juu zaidi */
+  border-color: #d4af37;
+  box-shadow: 0 15px 40px rgba(212, 175, 55, 0.25); /* Mwanga laini wa dhahabu */
+}
+
+/* NAMBA ZINAZOPIGA KAMA MAPIGO YA MOYO (HEARTBEAT) */
+.time-card h3{
+  font-size:55px;
+  color:#b48b1f;
+  margin-bottom:10px;
+  font-weight: 700;
+  display: inline-block;
+  
+  /* Hii inafanya namba zote ziwe na animation ya mapigo ya moyo */
+  animation: timeHeartbeat 2s infinite ease-in-out;
+}
+
+.time-card p{
+  font-size:17px;
+  color:#555;
+  font-weight:500;
+}
+
+/* ANIMATION MPYA YA MAPIGO YA MOYO YA KIWEDDING */
+@keyframes timeHeartbeat {
+  0% {
+    transform: scale(1);
+    text-shadow: none;
+  }
+  50% {
+    transform: scale(1.05); /* Inajivuta kidogo mbele */
+    color: #d4af37; /* Inang'aa dhahabu zaidi katikati ya animation */
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
+  }
+  100% {
+    transform: scale(1);
+    text-shadow: none;
+  }
+}
+
+/* ANIMATION MAALUMU YA SEKUNDE (Inabadilika haraka zaidi kufurahisha macho) */
+.time-card:last-child h3 {
+  animation: secondTick 1s infinite cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes secondTick {
+  0% { transform: scale(1); }
+  30% { transform: scale(1.08); color: #d4af37; } /* Tik! inajidunda kidogo */
+  100% { transform: scale(1); }
+}
+
+/* Kwenye Simu */
+@media(max-width:768px){
+  .time-card{
+    width:140px;
+    padding: 25px 15px;
+  }
+  .time-card h3{
+    font-size:42px;
+  }
+}
+
+/* MESSAGE */
+.message{
+  padding:70px 20px;
+  background:#f7f3eb;
+  text-align:center;
+}
+
+.message-box{
+  max-width:900px;
+  margin:auto;
+  background:white;
+  padding:50px;
+  border-radius:25px;
+  box-shadow:0 10px 35px rgba(0,0,0,0.08);
+}
+
+.message-box h2{
+  font-family:'Great Vibes',cursive;
+  color:#b48b1f;
+  font-size:55px;
+  margin-bottom:20px;
+}
+
+.message-box p{
+  font-size:18px;
+  line-height:2;
+  color:#444;
+}
+
+/* CONTACTS */
+.contacts{
+  background:#111827;
+  color:white;
+  text-align:center;
+  padding:50px 20px;
+}
+
+.contacts h2{
+  font-family:'Great Vibes',cursive;
+  font-size:50px;
+  color:#f6d365;
+  margin-bottom:20px;
+}
+
+.contacts p{
+  margin:12px 0;
+  font-size:18px;
+}
+
+.footer {
+  margin-top: 35px;
+  color: #bbb;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.designer-credit {
+  margin-top: 8px;
+  font-size: 12px; /* Inakuwa ndogo kidogo kwa muonekano safi wa siri */
+  color: #888; /* Rangi ya kijivu iliyopoa kidogo ili isizibe ujumbe mkuu */
+  letter-spacing: 0.5px;
+}
+
+@media(max-width:768px){
+
+  .hero h1{
+    font-size:55px;
+  }
+
+  .hero h2{
+    font-size:22px;
+  }
+
+  .time-card{
+    width:140px;
+  }
+
+  .time-card h3{
+    font-size:42px;
+  }
+
+  .message-box{
+    padding:30px 20px;
+  }
+
+}
+
+/* =========================
+   ISLAMIC LUXURY SPLASH
+========================= */
+
+.splash{
+    position:fixed;
+    inset:0;
+
+    background:
+    linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),
+    url('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1600&auto=format&fit=crop')
+    center/cover no-repeat;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    z-index:99999;
+    overflow:hidden;
+}
+
+/* CARD */
+
+.invite-card{
+    position:relative;
+
+    width:340px;
+    height:520px;
+
+    border-radius:25px;
+
+    background:
+    linear-gradient(145deg,#f8e7d3,#f3dbc0);
+
+    overflow:hidden;
+
+    box-shadow:
+    0 25px 60px rgba(0,0,0,.45);
+
+    animation:floatCard 4s ease-in-out infinite;
+}
+
+/* FLOAT */
+
+@keyframes floatCard{
+
+    0%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-10px);
+    }
+
+    100%{
+        transform:translateY(0px);
+    }
+
+}
+
+/* PATTERN */
+
+.arabic-pattern{
+    position:absolute;
+    inset:0;
+
+    background:
+    radial-gradient(circle at center,
+    rgba(255,255,255,.2),
+    transparent 70%);
+
+    opacity:.7;
+}
+
+/* CENTER SEAL */
+
+.seal{
+    position:absolute;
+
+    top:50%;
+    left:50%;
+
+    transform:translate(-50%,-50%);
+
+    width:150px;
+    height:150px;
+
+    border-radius:50%;
+
+    background:
+    linear-gradient(145deg,#5b3a1d,#a36b32);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    cursor:pointer;
+
+    z-index:10;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.4);
+
+    transition:1s;
+}
+
+/* INNER */
+
+.seal-inner{
+    width:120px;
+    height:120px;
+
+    border-radius:50%;
+
+    border:3px solid rgba(255,215,0,.4);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:50px;
+    color:#f7d774;
+
+    transition:1s;
+}
+
+/* TITLE */
+
+.card-cover h2{
+    position:absolute;
+
+    bottom:70px;
+    width:100%;
+
+    text-align:center;
+
+    color:#6a3e1b;
+    font-size:28px;
+    font-family:'Great Vibes',cursive;
+}
+
+/* LIGHT */
+
+.light{
+    position:absolute;
+
+    top:50%;
+    left:50%;
+
+    width:20px;
+    height:20px;
+
+    border-radius:50%;
+
+    background:#fff4c7;
+
+    transform:translate(-50%,-50%);
+
+    opacity:0;
+
+    filter:blur(10px);
+
+    z-index:20;
+}
+
+/* OPEN */
+
+.open .seal{
+    transform:
+    translate(-50%,-50%)
+    rotate(720deg)
+    scale(1.2);
+
+    opacity:0;
+}
+
+.open .light{
+    animation:lightBlast 1.5s forwards;
+}
+
+/* LIGHT BLAST */
+
+@keyframes lightBlast{
+
+    0%{
+        opacity:0;
+        transform:
+        translate(-50%,-50%)
+        scale(1);
+    }
+
+    20%{
+        opacity:1;
+        transform:
+        translate(-50%,-50%)
+        scale(20);
+    }
+
+    100%{
+        opacity:0;
+        transform:
+        translate(-50%,-50%)
+        scale(70);
+    }
+
+}
+
+/* SPLASH FADE */
+
+.hideSplash{
+    animation:fadeSplash 2s forwards;
+}
+
+@keyframes fadeSplash{
+
+    to{
+        opacity:0;
+        visibility:hidden;
+    }
+
+}
+
+/* CENTER CONTENT */
+
+.seal-inner{
+    width:120px;
+    height:120px;
+
+    border-radius:50%;
+
+    border:3px solid rgba(255,215,0,.4);
+
+    display:flex;
+    flex-direction:column;
+
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    font-size:50px;
+    color:#f7d774;
+
+    transition:1s;
+
+    gap:6px;
+}
+
+/* BISMILLAH */
+
+.bismillah{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    width:100%;
+
+    line-height:1;
+
+    font-size:15px;
+}
+
+/* TAP TEXT */
+
+.tap-text{
+    font-size:12px;
+    letter-spacing:1px;
+    color:#fff8dc;
+
+    text-transform:uppercase;
+
+    animation:pulseText 1.5s infinite;
+}
+
+/* ANIMATION */
+
+@keyframes pulseText{
+
+    0%{
+        opacity:.4;
+        transform:scale(1);
+    }
+
+    50%{
+        opacity:1;
+        transform:scale(1.08);
+    }
+
+    100%{
+        opacity:.4;
+        transform:scale(1);
+    }
+
+}
+
+/* STYLE YA TOGGLE BUTTON */
+.lang-toggle-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 99999;
+    background-color: #d4af37;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+.lang-toggle-btn:hover {
+    background-color: #b8952e;
+    transform: scale(1.05);
+}
+
+.wedding-frame {
+    border: 2px solid #d4af37; /* Border ya dhahabu */
+    padding: 30px 20px;
+    border-radius: 15px;
+    position: relative;
+    background: #fffdf9; /* Rangi ya karatasi ya mwaliko mweupe uliopoa */
+    box-shadow: inset 0 0 15px rgba(212, 175, 55, 0.2), 0 10px 25px rgba(0,0,0,0.05); /* Kivuli cha dhahabu kwa ndani */
+    margin: 20px auto;
+    max-width: 100%;
+}
+
+/* Mapambo madogo ya kona (Kuhakikisha inakaa ki-wedding zaidi) */
+.wedding-frame::before {
+    content: "💛";
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #fff;
+    padding: 0 10px;
+    font-size: 16px;
+    color: #d4af37;
+}
+
+/* CONTAINER YA TOGGLE */
+/* CONTAINER YA LUGHA (Sasa hivi inaboneka yenyewe yote) */
+.lang-toggle-container {
+    margin: 0 auto 10px auto;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.55); /* Giza la kifahari juu ya picha ya nyuma */
+    padding: 10px 24px;
+    border-radius: 30px;
+    border: 1px solid rgba(214, 175, 55, 0.4);
+    backdrop-filter: blur(8px); 
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    position: relative;
+    z-index: 100; 
+    width: max-content; 
+    transition: all 0.3s ease;
+    
+    /* Inalinda maandishi yasiharibike kwa mwandiko wa kishairi */
+    font-family: 'Poppins', sans-serif !important; 
+    text-transform: none;
+    
+    animation: containerPulse 2.5s infinite ease-in-out;
+}
+
+/* Athari ya mabadiliko pale mtu anapoweka kidole au mouse juu yake */
+.lang-toggle-container:hover {
+    background: rgba(0, 0, 0, 0.7);
+    border-color: rgba(214, 175, 55, 0.8);
+    transform: scale(1.03);
+}
+
+/* MAANDISHI YA NDANI YA LUGHA */
+.lang-status-text {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #f6d365;
+    font-weight: 600;
+}
+
+@keyframes containerPulse {
+    0% {
+        box-shadow: 0 5px 20px rgba(0,0,0,0.3), 0 0 0px rgba(214, 175, 55, 0);
+    }
+    50% {
+        box-shadow: 0 5px 25px rgba(0,0,0,0.5), 0 0 15px rgba(214, 175, 55, 0.4);
+        border-color: rgba(214, 175, 55, 0.7);
+    }
+    100% {
+        box-shadow: 0 5px 20px rgba(0,0,0,0.3), 0 0 0px rgba(214, 175, 55, 0);
+    }
+}
+
+/* KITUFE CHENYEWE */
+/* CONTAINER YA TOGGLE - IMEREKEBISHWA IKAE KATI NA JUU YA BACKGROUND */
+.lang-toggle-container {
+    margin: 25px auto; /* Inalazimisha kukaa katikati kabisa (Center) kushoto na kulia */
+    display: flex; /* Badala ya inline-flex ili itambue upana wake vizuri */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: rgba(0, 0, 0, 0.4); /* Nimeifanya giza kidogo ili maandishi ya dhahabu yang'ae juu ya picha yoyote ya nyuma */
+    padding: 12px 25px;
+    border-radius: 30px;
+    border: 1px solid rgba(214, 175, 55, 0.4);
+    backdrop-filter: blur(8px); /* Inaleta muonekano wa kioo cha kisasa juu ya picha */
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    
+    /* HIZI NDIO ZINAZOIVUTA JUU YA PICHA YA BACKGROUND */
+    position: relative;
+    z-index: 100; 
+    width: max-content; /* Inajikunja kulingana na ukubwa wa vitu vya ndani tu */
+    
+    animation: containerPulse 2.5s infinite ease-in-out;
+}
+
+.lang-toggle-btn {
+    background: linear-gradient(135deg, #d4af37, #b8952e);
+    color: #111;
+    border: none;
+    padding: 6px 20px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(214, 175, 55, 0.4);
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
+}
+
+.lang-toggle-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(214, 175, 55, 0.6);
+}
+
+/* MAANDISHI CHINI YA KITUFE */
+.lang-status-text {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #f6d365;
+    font-weight: 500;
+}
+
+/* ANIMATION YA KONTENA */
+@keyframes containerPulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 5px 20px rgba(0,0,0,0.3), 0 0 0px rgba(214, 175, 55, 0);
+    }
+    50% {
+        transform: scale(1.02);
+        box-shadow: 0 5px 25px rgba(0,0,0,0.5), 0 0 15px rgba(214, 175, 55, 0.5);
+        border-color: rgba(214, 175, 55, 0.7);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 5px 20px rgba(0,0,0,0.3), 0 0 0px rgba(214, 175, 55, 0);
+    }
+}
+</style>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- SPLASH -->
+<div class="splash" id="splash">
+
+    <div class="invite-card">
+
+        <!-- CARD -->
+        <div class="card-cover">
+
+            <div class="arabic-pattern"></div>
+
+            <!-- SEAL -->
+            <div class="seal" onclick="openInvitation()">
+
+                <div class="seal-inner">
+
+                    <div class="bismillah">
+                        ﷽
+                    </div>
+
+                    <span class="tap-text" data-en="Tap Here" data-sw="Bonyeza Hapa">
+                        Tap Here
+                    </span>
+
+                </div>
+
+            </div>
+
+            <h2 data-en="You Are Invited" data-sw="Umealikwa">You Are Invited</h2>
+
+        </div>
+
+        <!-- LIGHT -->
+        <div class="light"></div>
+
+    </div>
+
+</div>
+
+<!-- MAIN -->
+<div class="main" id="mainContent">
+
+  <!-- HERO -->
+  <section class="hero">
+  <div class="hero-content">
+    
+    <h1>
+      <div class="lang-toggle-container" onclick="toggleLanguage()" style="cursor: pointer;">
+         <div class="lang-status-text" id="langStatus">English / Swahili</div>
+      </div>
+
+      <span data-en="Our Wedding" data-sw="Harusi Yetu">Our Wedding</span>
+    </h1>
+
+    <h2>Aboubakari salamu Dau ❤️ Bint Shariff Mattar Jamalullaly</h2>
+
+    <div class="couple">
+      <img src="src/unlocked.jpeg" alt="Bride">
+      <img src="src/mrs.jpeg" alt="Wedding">
+    </div>
+  </div>
+</section>
+
+  <!-- TIMER -->
+  <section class="timer-section">
+
+    <h2 class="section-title" data-en="Days Left" data-sw="Siku Zilizobaki">Days Left</h2>
+
+    <div class="timer-container" id="timerContainer">
+
+      <div class="time-card">
+        <h3 id="days">00</h3>
+        <p data-en="Days" data-sw="Siku">Days</p>
+      </div>
+
+      <div class="time-card">
+        <h3 id="hours">00</h3>
+        <p data-en="Hours" data-sw="Masaa">Hours</p>
+      </div>
+
+      <div class="time-card">
+        <h3 id="minutes">00</h3>
+        <p data-en="Minutes" data-sw="Dakika">Minutes</p>
+      </div>
+
+      <div class="time-card">
+        <h3 id="seconds">00</h3>
+        <p data-en="Seconds" data-sw="Sekunde">Seconds</p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- MESSAGE -->
+  <section class="message">
+
+    <div class="message-box">
+
+      <h2 data-en="Welcome to Our Celebration" data-sw="Karibu Katika Furaha Yetu">Welcome to Our Celebration</h2>
+      
+<div class="wedding-frame">
+    <p id="weddingMessage" 
+       data-en="The families of Dau and Shariff Mattar, with great joy and respect, warmly invite you to join us in celebrating the wedding of their beloved children, Abubakar Salum Dau and Bint Shariff Mattar Jamalullaly.<br><br>This blessed ceremony will take place at Kitumbini Mosque, Kisutu, on Thursday, 04/06, after Isha prayer.<br><br>Furthermore, on 06/06, there will be a Walima celebration in honor of their children, Abubakar Salum Dau and Bint Shariff Mattar Jamalullaly, which will be held in Kigamboni." 
+       data-sw="Familia ya Dau na Shariff Mattar kwa furaha na heshima kubwa inapenda kukualika kushiriki nasi katika hafla ya ndoa ya vijana wao wapendwa, Abubakar Salum Dau na Shariff Mattar Jamalullaly.<br><br>Hafla hii tukufu itafanyika katika Msikiti wa Kitumbini, Kisutu siku ya Alhamisi, tarehe 04/06, baada ya Swala ya Ishai.<br><br>Na ifikapo tarehe 06/06 kutakuwa na hafla ya walima kuwapongeza watoto wao Abubakar Salum Dau na Bint Shariff Mattar Jamalullaly itakayofanyika kigamboni.">
+       The families of Dau and Shariff Mattar, with great joy and respect, warmly invite you to join us in celebrating the wedding of their beloved children, Abubakar Salum Dau and Bint Shariff Mattar Jamalullaly.<br><br>This blessed ceremony will take place at Kitumbini Mosque, Kisutu, on Thursday, 04/06, after Isha prayer.<br><br>Furthermore, on 06/06, there will be a Walima celebration in honor of their children, Abubakar Salum Dau and Bint Shariff Mattar Jamalullaly, which will be held in Kigamboni.
+    </p>
+</div>
+
+    </div>
+
+  </section>
+
+  <!-- CONTACTS -->
+  <section class="contacts">
+
+    <h2 data-en="Contacts" data-sw="Mawasiliano">Contacts</h2>
+
+    <p><strong data-en="Groom:" data-sw="Bwana Harusi:">Groom:</strong> +255 693 243 806</p>
+
+<div class="footer">
+  <span data-en="© 2026 Islamic Wedding Invitation" data-sw="© 2026 Kadi ya Mwaliko wa Harusi ya Kiislamu">
+    © 2026 Islamic Wedding Invitation
+  </span>
+  
+  <p class="designer-credit">
+    Design by Khan malove brand | Phone: 0699 529 291 or 0652 187 539
+  </p>
+</div>
+
+  </section>
+
+</div>
+
+<script>
+// MFUMO WA LUGHA (LANGUAGE SYSTEM) - Default ni English ('en')
+let currentLang = 'en'; 
+
+function toggleLanguage() {
+    const statusText = document.getElementById("langStatus");
+    
+    if (currentLang === 'en') {
+        currentLang = 'sw';
+        statusText.innerText = 'Swahili / English'; // Maandishi yanabadilika mtu akikubofya
+    } else {
+        currentLang = 'en';
+        statusText.innerText = 'English / Swahili';
+    }
+
+    document.querySelectorAll('[data-en]').forEach(element => {
+        if (currentLang === 'sw') {
+            element.innerHTML = element.getAttribute('data-sw');
+        } else {
+            element.innerHTML = element.getAttribute('data-en');
+        }
+    });
+}
+
+function openInvitation() {
+    const splash = document.getElementById("splash");
+    splash.classList.add("open");
+
+    setTimeout(() => {
+        splash.classList.add("hideSplash");
+    }, 1200);
+
+    setTimeout(() => {
+        splash.style.display = "none";
+        document.getElementById("mainContent").style.display = "block";
+    }, 2500);
+}
+
+/* ======================
+    COUNTDOWN TIMER
+====================== */
+const weddingDate = new Date("June 04, 2026 08:00:00").getTime();
+
+const countdown = setInterval(() => {
+    const now = new Date().getTime();
+    const distance = weddingDate - now;
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+if (distance >= 0) {
+        document.getElementById("days").innerHTML = days;
+        document.getElementById("hours").innerHTML = hours;
+        document.getElementById("minutes").innerHTML = minutes;
+        
+        // Inasoma kama sekunde imebadilika na kulazimisha animation ya tick ifanye kazi
+        const secElem = document.getElementById("seconds");
+        if(secElem.innerHTML != seconds) {
+            secElem.innerHTML = seconds;
+        }
+    }
+
+    if (distance < 0) {
+        clearInterval(countdown);
+        
+        // Inabadilisha ujumbe kulingana na lugha ya sasa hivi
+        const finishedText = currentLang === 'en' ? 'The Wedding Day is Here! 🎉' : 'Harusi Imefika 🎉';
+
+        document.getElementById("timerContainer").innerHTML = `
+            <h2 style="
+                color:#d4af37;
+                font-size:50px;
+                font-family:'Great Vibes',cursive;
+                text-align: center;
+                width: 100%;
+            ">
+                ${finishedText}
+            </h2>
+        `;
+    }
+}, 1000);
+</script>
+</body>
+</html>
