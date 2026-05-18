@@ -271,12 +271,22 @@ font-family: 'Great Vibes', cursive;
   line-height:1.8;
 }
 
-.couple{
-  display:flex;
-  justify-content:center;
-  margin-top:40px;
-  gap:20px;
-  flex-wrap:wrap;
+/* CONTAINER KUU YA PICHA ZA MAHARUSI */
+.couple {
+    display: table;
+    width: 100%;
+    max-width: 600px; /* Ukubwa wa juu kabisa wa eneo la picha kwenye laptop */
+    margin: 30px auto 0 auto;
+    table-layout: fixed; /* Inalazimisha pande zote mbili kulingana sawa */
+    border-collapse: separate;
+    border-spacing: 15px 0; /* Nafasi (Gap) ya kifahari kati ya picha ya mwanaume na mwanamke */
+}
+
+/* BOX LA KILA PICHA */
+.couple-img-wrapper {
+    display: table-cell;
+    width: 50%; /* Kila picha inachukua nusu ya skrini muda wote */
+    vertical-align: middle;
 }
 
 .couple img{
@@ -287,13 +297,21 @@ font-family: 'Great Vibes', cursive;
   border:5px solid rgba(255,255,255,0.4);
   box-shadow:0 10px 30px rgba(0,0,0,0.3);
 }
-/* TIMER - IMEREKEBISHWA */
-.timer-section{
-  padding:80px 20px;
-  background:#fff;
-  text-align:center;
+/* PICHA ZENYEWE */
+.couple img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 15px; /* Pembe zilizolainishwa kifahari */
+    border: 2px solid #f6d365; /* Sura ya dhahabu ya kadi ya harusi */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4); /* Kivuli cha kufanya picha zizozotee mbele */
+    transition: transform 0.4s ease;
 }
 
+/* Athari mgeni akigusa picha */
+.couple img:hover {
+    transform: scale(1.04);
+}
 .section-title{
   font-family:'Great Vibes',cursive;
   font-size:60px;
@@ -996,13 +1014,16 @@ font-family: 'Great Vibes', cursive;
       <span data-en="Our Wedding" data-sw="Harusi Yetu">Our Wedding</span>
     </h1>
 
-    <h2>Aboubakari salamu Dau ❤️ Bint Shariff Mattar Jamalullaly</h2>
+    <h2>Abubakar salam Dau ❤️ Bint Shariff Mattar Jamalullaly</h2>
 
     <div class="couple">
-      <img src="src/unlocked.jpeg" alt="Bride">
-      <img src="src/mrs.jpeg" alt="Wedding">
-    </div>
+  <div class="couple-img-wrapper">
+    <img src="src/unlocked.jpeg" alt="Bridegroom">
   </div>
+  <div class="couple-img-wrapper">
+    <img src="src/mrs.jpeg" alt="Bride">
+  </div>
+</div>
 </section>
 
   <!-- TIMER -->
