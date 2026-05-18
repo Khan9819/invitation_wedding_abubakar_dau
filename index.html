@@ -199,13 +199,20 @@ body{
 
 /* Mobile */
 @media(max-width:768px) {
-    /* Mabadiliko mengine ya simu yaliyopo yabaki... */
+    /* ... kodi zako zingine za simu zilizopo zibaki ... */
     
     .couple {
-        max-width: 90%; /* Kwenye simu inachukua asilimia kubwa ya kioo ili picha zionekane vizuri */
-        border-spacing: 8px 0; /* Inapunguza nafasi ya katikati kidogo kwenye simu */
+        max-width: 95%; 
+        border-spacing: 10px 0; 
     }
-}
+
+    /* LAZIMISHA FREMU ZILINGANE PIA KWENYE SIMU */
+    .couple img {
+        /* Kwenye simu urefu wa fremu unakuwa pixel 200 hadi 220 ili zikae vizuri pembeni kwa pembeni */
+        height: 210px; 
+        object-fit: cover; /* Inahakikisha bado picha haiharibiki */
+    }
+  
 
   .envelope{
     width:300px;
@@ -296,13 +303,20 @@ font-family: 'Great Vibes', cursive;
     vertical-align: middle;
 }
 
-.couple img{
-  width:260px;
-  height:320px;
-  object-fit:cover;
-  border-radius:20px;
-  border:5px solid rgba(255,255,255,0.4);
-  box-shadow:0 10px 30px rgba(0,0,0,0.3);
+/* PICHA ZENYEWE - ZIMEREKEBISHWA FREMU */
+.couple img {
+    width: 100%;
+    /* 1. Lazimisha urefu wa fremu ufanane kwenye laptop (kwa mfano pixel 380) */
+    height: 380px; 
+    
+    /* 2. Muhimu: Inakata picha kuingia kwenye fremu bila kusinyaa wala kupoteza ubora */
+    object-fit: cover; 
+    
+    /* Maelezo mengine ya urembo yanabaki kama yale ya mwanzo */
+    border-radius: 15px; 
+    border: 2px solid #f6d365; 
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4); 
+    transition: transform 0.4s ease;
 }
 /* PICHA ZENYEWE */
 .couple img {
