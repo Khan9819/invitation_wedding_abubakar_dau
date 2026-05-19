@@ -1009,144 +1009,290 @@ font-family: 'Great Vibes', cursive;
         box-shadow: 0 5px 20px rgba(0,0,0,0.3), 0 0 0px rgba(214, 175, 55, 0);
     }
 }
+/* KADI YA MUZIKI CHINI KULIA */
+.music-card {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  border: 2px solid #d4af37;
+  border-radius: 15px;
+  padding: 12px 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 999999; /* Inakaa juu ya kila kitu */
+  width: 220px;
+  transition: all 0.4s ease;
+  animation: slideInCard 1s ease forwards;
+}
+
+@keyframes slideInCard {
+  from { transform: translateY(100px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* KADI YA MUZIKI - ULTRA-COMPACT VIP CAPSULE */
+.music-card {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  border-radius: 30px;
+  padding: 4px 8px; /* Imepunguzwa upana kabisa */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 999999;
+  height: 36px;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  animation: creativePopIn 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes creativePopIn {
+  from { transform: translateY(20px) scale(0.8); opacity: 0; }
+  to { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+.music-info {
+  display: flex;
+  align-items: center;
+}
+
+/* KITUFE KINACHOZUNGUKA (CREATIVE DISC BUTTON) */
+.music-icon-disc {
+  width: 28px;
+  height: 28px;
+  background: linear-gradient(135deg, #d4af37, #b8952e);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 10px;
+  box-shadow: 0 3px 8px rgba(212, 175, 55, 0.3);
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s;
+}
+
+.music-icon-disc:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.45);
+}
+
+/* Mzunguko smooth wa VIP */
+.music-playing {
+  animation: creativeSpin 5s linear infinite;
+}
+
+@keyframes creativeSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.music-controls {
+  display: flex;
+  align-items: center;
+  border-left: 1px solid rgba(212, 175, 55, 0.2);
+  padding-left: 6px;
+}
+
+/* SMART VOLUME SYSTEM */
+.volume-container {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  cursor: pointer;
+  width: 14px;
+  overflow: hidden;
+  transition: width 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.volume-container:hover {
+  width: 60px; /* Inajifungua kiungwana */
+}
+
+.volume-slider {
+  width: 40px;
+  accent-color: #d4af37;
+  cursor: pointer;
+  height: 2px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.volume-container:hover .volume-slider {
+  opacity: 1;
+}
+
+/* RESPONSIVE YA SIMU */
+@media (max-width: 768px) {
+  .music-card {
+    bottom: 15px;
+    right: 15px;
+    height: 34px;
+    padding: 3px 6px;
+  }
+  .music-icon-disc {
+    width: 26px;
+    height: 26px;
+  }
+}
+
+/* LOVE PARTICLE RAIN SYSTEM */
+.heart-particle {
+  position: fixed;
+  top: -25px; /* Inaanza juu nje kidogo ya skrini */
+  pointer-events: none; /* Inafanya isizibie vifungo au maandishi */
+  z-index: 99999; /* Inakaa juu ya background lakini chini ya kadi ya muziki */
+  font-size: var(--size);
+  opacity: var(--opacity);
+  transform: translateX(0);
+  animation: heartRain var(--duration) linear forwards;
+/* Inatumia rangi ya SVG badala ya font-size ya emoji */
+  fill: var(--heart-color); 
+  
+  transform: translateX(0);
+  animation: heartRain var(--duration) linear forwards;
+}
+
+
+
+@keyframes heartRain {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0; /* Inaanza kwa siri bila kushtua macho */
+  }
+  10% {
+    opacity: var(--opacity); /* Inatokea kwa ulaini (Fade In) */
+  }
+  100% {
+    opacity: var(--opacity); /* Inabaki safi wakati wote wa kushuka */
+  }
+  100% {
+    /* Inafika chini kabisa huku ikiyeyuka kwa utulivu mkubwa (Smooth Transition) */
+    transform: translateY(110vh) rotate(360deg);
+    opacity: 0; /* Inapotea kabisa kwa fade-out laini sana */
+  }
+}
 </style>
 
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
+  
+<audio id="weddingMusic" loop prefetch="auto" autoplay>
+  <source src="src/harusi_song.mp3" type="audio/mp3">
+</audio>
 
-<!-- SPLASH -->
-<div class="splash" id="splash">
-
-    <div class="invite-card">
-
-        <!-- CARD -->
-        <div class="card-cover">
-
-            <div class="arabic-pattern"></div>
-
-            <!-- SEAL -->
-            <div class="seal" onclick="openInvitation()">
-
-                <div class="seal-inner">
-
-                    <div class="bismillah">
-                        ﷽
-                    </div>
-
-                    <span class="tap-text" data-en="Tap Here" data-sw="Bonyeza Hapa">
-                        Tap Here
-                    </span>
-
-                </div>
-
-            </div>
-
-            <h2 data-en="You Are Invited" data-sw="Umealikwa">You Are Invited</h2>
-
-        </div>
-
-        <!-- LIGHT -->
-        <div class="light"></div>
-
+<div class="music-card" id="musicCard">
+  <div class="music-info">
+    <button class="music-icon-disc" id="playPauseBtn" onclick="toggleMusic()">▶️</button>
+  </div>
+  
+  <div class="music-controls">
+    <div class="volume-container">
+      🔊 <input type="range" id="volumeSlider" class="volume-slider" min="0" max="1" step="0.1" value="0.8" oninput="changeVolume(this.value)">
     </div>
-
+  </div>
 </div>
 
-<!-- MAIN -->
+<div class="splash" id="splash">
+    <div class="invite-card">
+        <div class="card-cover">
+            <div class="arabic-pattern"></div>
+            <div class="seal" onclick="openInvitation()">
+                <div class="seal-inner">
+                    <div class="bismillah">﷽</div>
+                    <span class="tap-text" data-en="Tap Here" data-sw="Bonyeza Hapa">Bonyeza Hapa</span>
+                </div>
+            </div>
+            <h2 data-en="You Are Invited" data-sw="Umealikwa">You Are Invited</h2>
+        </div>
+        <div class="light"></div>
+    </div>
+</div>
+
 <div class="main" id="mainContent">
 
-  <!-- HERO -->
   <section class="hero">
-  <div class="hero-content">
-    
-    <h1>
-      <div class="lang-toggle-container" onclick="toggleLanguage()" style="cursor: pointer;">
-         <div class="lang-status-text" id="langStatus">English / Swahili</div>
+    <div class="hero-content">
+      <h1>
+        <div class="lang-toggle-container" onclick="toggleLanguage()" style="cursor: pointer;">
+           <div class="lang-status-text" id="langStatus">English / Swahili</div>
+        </div>
+        <span data-en="Our Wedding" data-sw="Harusi Yetu">Our Wedding</span>
+      </h1>
+
+      <h2>Abubakar Salum Dau ❤️ Bint Shariff Matar Jamulaly</h2>
+
+      <div class="couple">
+        <div class="couple-img-wrapper">
+          <img src="src/unlocked.jpeg" alt="Bridegroom">
+        </div>
+        <div class="couple-img-wrapper">
+          <img src="src/mrs.jpg" alt="Bride">
+        </div>
       </div>
+    </div>
+  </section>
 
-      <span data-en="Our Wedding" data-sw="Harusi Yetu">Our Wedding</span>
-    </h1>
-
-    <h2>Abubakar Salam Dau ❤️ Bint Shariff Matar Jamulaly</h2>
-
-    <div class="couple">
-  <div class="couple-img-wrapper">
-    <img src="src/unlocked.jpeg" alt="Bridegroom">
-  </div>
-  <div class="couple-img-wrapper">
-    <img src="src/mrs.jpg"Bride>
-  </div>
-</div>
-</section>
-
-  <!-- TIMER -->
   <section class="timer-section">
-
     <h2 class="section-title" data-en="Days Left" data-sw="Siku Zilizobaki">Days Left</h2>
-
     <div class="timer-container" id="timerContainer">
-
       <div class="time-card">
         <h3 id="days">00</h3>
         <p data-en="Days" data-sw="Siku">Days</p>
       </div>
-
       <div class="time-card">
         <h3 id="hours">00</h3>
         <p data-en="Hours" data-sw="Masaa">Hours</p>
       </div>
-
       <div class="time-card">
         <h3 id="minutes">00</h3>
         <p data-en="Minutes" data-sw="Dakika">Minutes</p>
       </div>
-
       <div class="time-card">
         <h3 id="seconds">00</h3>
         <p data-en="Seconds" data-sw="Sekunde">Seconds</p>
       </div>
-
     </div>
-
   </section>
 
-  <!-- MESSAGE -->
   <section class="message">
-
     <div class="message-box">
-
       <h2 data-en="Welcome to Our Celebration" data-sw="Karibu Katika Furaha Yetu">Welcome to Our Celebration</h2>
-      
-<div class="wedding-frame">
-    <p id="weddingMessage" 
-       data-en="The families of Dau and Bint Shariff Matar, with great joy and respect, warmly invite you to join us in celebrating the wedding of their beloved children, Abubakar Salum Dau and Bint Shariff Matar Jamulaly.<br><br>This blessed ceremony will take place at Kitumbini Mosque, Kisutu, on Thursday, 04/06, after Isha prayer.<br><br>Furthermore, on 06/06, there will be a Walima celebration in honor of their children, Abubakar Salum Dau and Bint Shariff ar Jamalullaly, which will be held in Kigamboni." 
-       data-sw="Familia ya Dau na Shariff ar kwa furaha na heshima kubwa inapenda kukualika kushiriki nasi katika hafla ya ndoa ya vijana wao wapendwa, Abubakar Salum Dau na Shariff Matar Jamulaly.<br><br>Hafla hii tukufu itafanyika katika Msikiti wa Kitumbini, Kisutu siku ya Alhamisi, tarehe 04/06, baada ya Swala ya Ishai.<br><br>Na ifikapo tarehe 06/06 kutakuwa na hafla ya walima kuwapongeza watoto wao Abubakar Salum Dau na Bint Shariff Matar Jamalullaly itakayofanyika kigamboni.">
-       The families of Dau and Shariff Matar, with great joy and respect, warmly invite you to join us in celebrating the wedding of their beloved children, Abubakar Salum Dau and Bint Shariff Matar Jamulaly.<br><br>This blessed ceremony will take place at Kitumbini Mosque, Kisutu, on Thursday, 04/06, after Isha prayer.<br><br>Furthermore, on 06/06, there will be a Walima celebration in honor of their children, Abubakar Salum Dau and Bint Shariff Matar Jamalullaly, which will be held in Kigamboni.
-    </p>
-</div>
-
+      <div class="wedding-frame">
+          <p id="weddingMessage" 
+             data-en="The families of Dau and Bint Shariff Matar, with great joy and respect, warmly invite you to join us in celebrating the wedding of their beloved children, Abubakar Salum Dau and Bint Shariff Matar Jamulaly.<br><br>This blessed ceremony will take place at Kitumbini Mosque, Kisutu, on Thursday, 04/06, after Isha prayer.<br><br>Furthermore, on 06/06, there will be a Walima celebration in honor of their children, Abubakar Salum Dau and Bint Shariff ar Jamalullaly, which will be held in Kigamboni." 
+             data-sw="Familia ya Dau na Shariff ar kwa furaha na heshima kubwa inapenda kukualika kushiriki nasi katika hafla ya ndoa ya vijana wao wapendwa, Abubakar Salum Dau na Shariff Matar Jamulaly.<br><br>Hafla hii tukufu itafanyika katika Msikiti wa Kitumbini, Kisutu siku ya Alhamisi, tarehe 04/06, baada ya Swala ya Ishai.<br><br>Na ifikapo tarehe 06/06 kutakuwa na hafla ya walima kuwapongeza watoto wao Abubakar Salum Dau na Bint Shariff Matar Jamalullaly itakayofanyika kigamboni.">
+             The families of Dau and Shariff Matar, with great joy and respect, warmly invite you to join us in celebrating the wedding of their beloved children, Abubakar Salum Dau and Bint Shariff Matar Jamulaly.<br><br>This blessed ceremony will take place at Kitumbini Mosque, Kisutu, on Thursday, 04/06, after Isha prayer.<br><br>Furthermore, on 06/06, there will be a Walima celebration in honor of their children, Abubakar Salum Dau and Bint Shariff Matar Jamalullaly, which will be held in Kigamboni.
+          </p>
+      </div>
     </div>
-
   </section>
 
-  <!-- CONTACTS -->
   <section class="contacts">
-
     <h2 data-en="Contacts" data-sw="Mawasiliano">Contacts</h2>
-
     <p><strong data-en="Groom:" data-sw="Bwana Harusi:">AhmaD Dau:</strong> +255 767 666 444</p>
 
-<div class="footer">
-  <span data-en="© 2026 Islamic Wedding Invitation" data-sw="© 2026 Kadi ya Mwaliko wa Harusi ya Kiislamu">
-    © 2026 Islamic Wedding Invitation
-  </span>
-  
-  <p class="designer-credit">
-    Design by Khan malove brand | Phone: 0699 529 291 or 0652 187 539
-  </p>
-</div>
-
+    <div class="footer">
+      <span data-en="© 2026 Islamic Wedding Invitation" data-sw="© 2026 Kadi ya Mwaliko wa Harusi ya Kiislamu">
+        © 2026 Islamic Wedding Invitation
+      </span>
+      <p class="designer-credit">
+        Design by Khan malove brand | Phone: 0699 529 291 or 0652 187 539
+      </p>
+    </div>
   </section>
 
 </div>
@@ -1160,7 +1306,7 @@ function toggleLanguage() {
     
     if (currentLang === 'en') {
         currentLang = 'sw';
-        statusText.innerText = 'Swahili / English'; // Maandishi yanabadilika mtu akikubofya
+        statusText.innerText = 'Swahili / English'; 
     } else {
         currentLang = 'en';
         statusText.innerText = 'English / Swahili';
@@ -1175,9 +1321,27 @@ function toggleLanguage() {
     });
 }
 
+const audio = document.getElementById("weddingMusic");
+const playPauseBtn = document.getElementById("playPauseBtn");
+const discIcon = document.getElementById("discIcon");
+const musicStatus = document.getElementById("musicStatus");
+
+// Sauti ya kuanzia (80%)
+audio.volume = 0.8;
+
+// FUNCTION MOJA TU YA KUFUNGUA MWALIKO NA KUWASHA MUZIKI
 function openInvitation() {
     const splash = document.getElementById("splash");
     splash.classList.add("open");
+
+    if (audio.paused) {
+        audio.play().then(() => {
+            updateCardUI(true);
+        }).catch(err => {
+            console.log(err);
+            updateCardUI(false);
+        });
+    }
 
     setTimeout(() => {
         splash.classList.add("hideSplash");
@@ -1186,7 +1350,50 @@ function openInvitation() {
     setTimeout(() => {
         splash.style.display = "none";
         document.getElementById("mainContent").style.display = "block";
+        
+        // HAPA NDIPO MVUA INAPOAMSHWA!
+        initParticles(); 
     }, 2500);
+}
+
+// FUNCTION YA PLAY/PAUSE KUTOKA KWENYE KADI
+function toggleMusic() {
+    if (audio.paused) {
+        audio.play().then(() => {
+            updateCardUI(true);
+        }).catch(err => {
+            alert("Muziki umeshindwa kufunguka. Hakikisha faili lipo folda ya src na linaitwa harusi_song.mp3");
+            console.log(err);
+        });
+    } else {
+        audio.pause();
+        updateCardUI(false);
+    }
+}
+
+// FUNCTION YA KUPUNGUZA NA KUONGEZA SAUTI
+function changeVolume(volumeValue) {
+    audio.volume = volumeValue;
+    if(volumeValue == 0) {
+        musicStatus.innerText = "Imezimwa sauti";
+    } else {
+        if(!audio.paused) {
+            musicStatus.innerText = "Inacheza...";
+        }
+    }
+}
+
+// Inasaidia kubadilisha muonekano wa kadi
+function updateCardUI(isPlaying) {
+    if (isPlaying) {
+        playPauseBtn.innerText = "⏸️";
+        discIcon.classList.add("music-playing");
+        musicStatus.innerText = "Inacheza...";
+    } else {
+        playPauseBtn.innerText = "▶️";
+        discIcon.classList.remove("music-playing");
+        musicStatus.innerText = "Imesimamishwa";
+    }
 }
 
 /* ======================
@@ -1203,12 +1410,11 @@ const countdown = setInterval(() => {
     const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-if (distance >= 0) {
+    if (distance >= 0) {
         document.getElementById("days").innerHTML = days;
         document.getElementById("hours").innerHTML = hours;
         document.getElementById("minutes").innerHTML = minutes;
         
-        // Inasoma kama sekunde imebadilika na kulazimisha animation ya tick ifanye kazi
         const secElem = document.getElementById("seconds");
         if(secElem.innerHTML != seconds) {
             secElem.innerHTML = seconds;
@@ -1218,7 +1424,6 @@ if (distance >= 0) {
     if (distance < 0) {
         clearInterval(countdown);
         
-        // Inabadilisha ujumbe kulingana na lugha ya sasa hivi
         const finishedText = currentLang === 'en' ? 'The Wedding Day is Here! 🎉' : 'Harusi Imefika 🎉';
 
         document.getElementById("timerContainer").innerHTML = `
@@ -1234,6 +1439,65 @@ if (distance >= 0) {
         `;
     }
 }, 1000);
+/* ==========================================
+    CREATIVE LOVE PARTICLE RAIN ANIMATION
+========================================== */
+function initParticles() {
+    // 1. Kwanza, tunajaza skrini na mioyo ya haraka ili isionekane tupu mwanzo
+    for (let i = 0; i < 20; i++) {
+        createSmoothHeart(true); // 'true' inamaanisha moyo utaanza katikati ya skrini
+    }
+
+    // 2. Kisha tunatumia setInterval kutengeneza mioyo mipya kila baada ya sekunde 0.3, MUDA WOTE
+    setInterval(() => {
+        createSmoothHeart(false); // 'false' inamaanisha moyo utaanza juu kabisa
+    }, 300); 
+}
+
+// Function inayotengeneza moyo mmoja mwororo
+function createSmoothHeart(startMidScreen) {
+    // Muundo wa SVG wa moyo safi na mwororo (Siyo emoji)
+    const heartSVG = `<svg viewBox="0 0 32 32"><path d="M16,28.261c0,0-14-7.926-14-17.046c0-4.356,3.533-7.889,7.889-7.889c2.473,0,4.671,1.137,6.111,2.903c1.44-1.766,3.638-2.903,6.111-2.903C26.467,3.326,30,6.859,30,11.215C30,20.335,16,28.261,16,28.261z"/></svg>`;
+    
+    const heart = document.createElement('div');
+    heart.innerHTML = heartSVG;
+    const heartNode = heart.firstChild;
+    heartNode.classList.add('heart-particle');
+    
+    // VIP Color Palette (Dhahabu na Pinki laini)
+    const colors = ['#f6d365', '#d4af37', '#ffc0cb'];
+    const randomColor = colors[Math.floor(Math.random() * colors.length)];
+    
+    // Parameter za Random (Zinatofautiana kidogo ili ionekane Natural)
+    const randomX = Math.random() * 100; // Nafasi ya kuanzia (0% - 100% upana)
+    const randomScale = Math.random() * (12 - 7) + 7; // Saizi ndogo ya kifahari (7px - 12px)
+    const randomOpacity = Math.random() * (0.7 - 0.4) + 0.4; // Uwazi wa kuzuia isizibe maandishi
+    const randomDuration = Math.random() * (10 - 6) + 6; // Kasi ya kushuka polepole (sekunde 6 - 10)
+
+    heartNode.style.left = `${randomX}vw`;
+    
+    // Ikiwa 'startMidScreen' ni kweli (wakati wa kwanza kuload), moyo unaanza sehemu tofauti
+    if (startMidScreen) {
+        const randomYStart = Math.random() * 100; // Anza popote kati ya 0% - 100% urefu
+        heartNode.style.top = `${randomYStart}vh`;
+    }
+
+    heartNode.style.width = `${randomScale}px`; // Weka upana wa moyo
+    
+    // Weka parameter kama CSS Variables
+    heartNode.style.setProperty('--heart-color', randomColor);
+    heartNode.style.setProperty('--opacity', randomOpacity);
+    heartNode.style.setProperty('--duration', `${randomDuration}s`);
+
+    document.body.appendChild(heartNode);
+
+    // KUDHIBITI MEMORY (MUHIMU SANA!)
+    // Kwa sababu mvua ni endelevu, lazima tuhakikishe mioyo inayoingia inafutwa kabisa
+    // mara baada ya animation yake kumalizika, ili website isilete log/error au kuwa nzito.
+    setTimeout(() => {
+        heartNode.remove();
+    }, randomDuration * 1000); 
+}
 </script>
 </body>
 </html>
